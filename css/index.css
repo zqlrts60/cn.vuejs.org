@@ -606,14 +606,13 @@ body.docs #nav {
 }
 .sidebar .main-sponsor .logo {
   color: #7f8c8d;
-  margin-top: 20px;
+  margin-top: 15px;
   text-align: center;
   font-weight: bold;
   display: block;
 }
 .sidebar .main-sponsor .logo:last-child {
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .sidebar .main-sponsor img,
 .sidebar .main-sponsor a {
@@ -768,7 +767,7 @@ body {
   display: none;
 }
 #hero {
-  padding: 50px 40px;
+  padding: 40px 40px 30px;
   background-color: #fff;
 }
 #hero .inner {
@@ -824,6 +823,25 @@ body {
   vertical-align: middle;
   margin-right: 15px;
 }
+#special-sponsor {
+  background-color: #fff;
+  text-align: center;
+  padding-bottom: 30px;
+}
+#special-sponsor a {
+  color: #7f8c8d;
+}
+#special-sponsor span,
+#special-sponsor img {
+  display: inline-block;
+  vertical-align: middle;
+}
+#special-sponsor img {
+  width: 150px;
+  position: relative;
+  top: -3px;
+  margin: 15px;
+}
 #highlights {
   background-color: #fff;
   padding-bottom: 70px;
@@ -851,9 +869,16 @@ body {
   color: #7f8c8d;
 }
 #footer {
-  padding: 50px 0;
+  padding: 40px 0;
   color: #fff;
   text-align: center;
+}
+#footer .social-icon {
+  margin: 0 5px;
+}
+#footer .social-icon svg {
+  width: 18px;
+  height: 18px;
 }
 #footer a {
   font-weight: 700;
@@ -874,7 +899,7 @@ body {
     display: block;
   }
   #hero {
-    padding: 50px 40px 30px;
+    padding: 40px 40px 30px;
   }
   #hero .hero-logo {
     float: none;
@@ -895,6 +920,12 @@ body {
   }
   #hero .button {
     font-size: 0.9em;
+  }
+  #special-sponsor span {
+    display: block;
+  }
+  #special-sponsor img {
+    width: 125px;
   }
   #highlights .point {
     display: block;

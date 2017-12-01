@@ -71,7 +71,8 @@
       ga('send', 'pageview');
     </script>
   </head>
-  <body class="docs">    <div id="mobile-bar" >
+  <body class="docs">
+    <div id="mobile-bar" >
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
     </div>
@@ -848,7 +849,7 @@
     
       <div id="ad">
   <a href="https://time.geekbang.org/?utm_source=website&utm_medium=vue&utm_campaign=routine&utm_content=tuijian" target="_blank" rel="nofollow">
-    <img src="/images/geekbang.jpg" alt="极客时间">
+    <img src="/images/geekbang2.jpg" alt="极客时间">
   </a>
 </div>
 
@@ -858,11 +859,11 @@
     <h1>路由</h1>
   
   
-  <h2 id="官方路由"><a href="#官方路由" class="headerlink" title="官方路由"></a>官方路由</h2><p>对于大多数单页面应用，都推荐使用官方支持的 <a href="https://github.com/vuejs/vue-router" target="_blank" rel="external">vue-router 库</a>。更多细节可以看 <a href="https://router.vuejs.org/" target="_blank" rel="external">vue-router 文档</a>。</p>
+  <h2 id="官方路由"><a href="#官方路由" class="headerlink" title="官方路由"></a>官方路由</h2><p>对于大多数单页面应用，都推荐使用官方支持的 <a href="https://github.com/vuejs/vue-router" target="_blank" rel="noopener">vue-router 库</a>。更多细节可以看 <a href="https://router.vuejs.org/" target="_blank" rel="noopener">vue-router 文档</a>。</p>
 <h2 id="从零开始简单的路由"><a href="#从零开始简单的路由" class="headerlink" title="从零开始简单的路由"></a>从零开始简单的路由</h2><p>如果只需要非常简单的路由而不需要引入整个路由库，可以动态渲染一个页面级的组件像这样：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> NotFound = &#123; <span class="attr">template</span>: <span class="string">'&lt;p&gt;Page not found&lt;/p&gt;'</span> &#125;</div><div class="line"><span class="keyword">const</span> Home = &#123; <span class="attr">template</span>: <span class="string">'&lt;p&gt;home page&lt;/p&gt;'</span> &#125;</div><div class="line"><span class="keyword">const</span> About = &#123; <span class="attr">template</span>: <span class="string">'&lt;p&gt;about page&lt;/p&gt;'</span> &#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> routes = &#123;</div><div class="line">  <span class="string">'/'</span>: Home,</div><div class="line">  <span class="string">'/about'</span>: About</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  el: <span class="string">'#app'</span>,</div><div class="line">  data: &#123;</div><div class="line">    currentRoute: <span class="built_in">window</span>.location.pathname</div><div class="line">  &#125;,</div><div class="line">  computed: &#123;</div><div class="line">    ViewComponent () &#123;</div><div class="line">      <span class="keyword">return</span> routes[<span class="keyword">this</span>.currentRoute] || NotFound</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  render (h) &#123; <span class="keyword">return</span> h(<span class="keyword">this</span>.ViewComponent) &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>结合 HTML5 History API，你可以建立一个非常基本但功能齐全的客户端路由器。可以直接看<a href="https://github.com/chrisvfritz/vue-2.0-simple-routing-example" target="_blank" rel="external">实例应用</a></p>
-<h2 id="整合第三方路由"><a href="#整合第三方路由" class="headerlink" title="整合第三方路由"></a>整合第三方路由</h2><p>如果有非常喜欢的第三方路由，如 <a href="https://github.com/visionmedia/page.js" target="_blank" rel="external">Page.js</a> 或者 <a href="https://github.com/flatiron/director" target="_blank" rel="external">Director</a>，整合<a href="https://github.com/chrisvfritz/vue-2.0-simple-routing-example/compare/master...pagejs" target="_blank" rel="external">很简单</a>。这有个用了 Page.js 的<a href="https://github.com/chrisvfritz/vue-2.0-simple-routing-example/tree/pagejs" target="_blank" rel="external">复杂示例</a>。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> NotFound = &#123; <span class="attr">template</span>: <span class="string">'&lt;p&gt;Page not found&lt;/p&gt;'</span> &#125;</span><br><span class="line"><span class="keyword">const</span> Home = &#123; <span class="attr">template</span>: <span class="string">'&lt;p&gt;home page&lt;/p&gt;'</span> &#125;</span><br><span class="line"><span class="keyword">const</span> About = &#123; <span class="attr">template</span>: <span class="string">'&lt;p&gt;about page&lt;/p&gt;'</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> routes = &#123;</span><br><span class="line">  <span class="string">'/'</span>: Home,</span><br><span class="line">  <span class="string">'/about'</span>: About</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    currentRoute: <span class="built_in">window</span>.location.pathname</span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    ViewComponent () &#123;</span><br><span class="line">      <span class="keyword">return</span> routes[<span class="keyword">this</span>.currentRoute] || NotFound</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  render (h) &#123; <span class="keyword">return</span> h(<span class="keyword">this</span>.ViewComponent) &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>结合 HTML5 History API，你可以建立一个非常基本但功能齐全的客户端路由器。可以直接看<a href="https://github.com/chrisvfritz/vue-2.0-simple-routing-example" target="_blank" rel="noopener">实例应用</a></p>
+<h2 id="整合第三方路由"><a href="#整合第三方路由" class="headerlink" title="整合第三方路由"></a>整合第三方路由</h2><p>如果有非常喜欢的第三方路由，如 <a href="https://github.com/visionmedia/page.js" target="_blank" rel="noopener">Page.js</a> 或者 <a href="https://github.com/flatiron/director" target="_blank" rel="noopener">Director</a>，整合<a href="https://github.com/chrisvfritz/vue-2.0-simple-routing-example/compare/master...pagejs" target="_blank" rel="noopener">很简单</a>。这有个用了 Page.js 的<a href="https://github.com/chrisvfritz/vue-2.0-simple-routing-example/tree/pagejs" target="_blank" rel="noopener">复杂示例</a>。</p>
 
   
     <div class="guide-links">

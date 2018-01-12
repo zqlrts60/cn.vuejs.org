@@ -144,10 +144,9 @@
   <a class="nav-link">支持 Vue</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><ul>
-      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">商店</a></li>
-      <li><a href="https://stickeroverflow.org/blog/vue-donation/" target="_blank" class="nav-link">贴纸</a></li>
-      <li><a href="https://opencollective.com/vuejs" target="_blank" class="nav-link">在 OpenCollective 支持我们</a></li>
-      <li><a href="https://www.patreon.com/evanyou" target="_blank" class="nav-link">在 Patreon 支持 Evan</a></li>
+      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">一次性赞助</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" target="_blank" class="nav-link">周期性赞助</a></li>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">T 恤商店</a></li>
     </ul></li>
   </ul>
 </li>
@@ -239,10 +238,9 @@
   <a class="nav-link">支持 Vue</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><ul>
-      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">商店</a></li>
-      <li><a href="https://stickeroverflow.org/blog/vue-donation/" target="_blank" class="nav-link">贴纸</a></li>
-      <li><a href="https://opencollective.com/vuejs" target="_blank" class="nav-link">在 OpenCollective 支持我们</a></li>
-      <li><a href="https://www.patreon.com/evanyou" target="_blank" class="nav-link">在 Patreon 支持 Evan</a></li>
+      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">一次性赞助</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" target="_blank" class="nav-link">周期性赞助</a></li>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">T 恤商店</a></li>
     </ul></li>
   </ul>
 </li>
@@ -859,7 +857,7 @@
     <h1>Class 与 Style 绑定</h1>
   
   
-  <p>操作元素的 class 列表和内联样式是数据绑定的一个常见需求。因为它们都是属性，所以我们可以用 <code>v-bind</code> 处理它们：只需要通过表达式计算出字符串结果即可。不过，字符串拼接麻烦且易错。因此，在将 <code>v-bind</code> 用于 <code>class</code> 和 <code>style</code> 时，Vue.js 做了专门的增强。表达式结果的类型除了字符串之外，还可以是对象或数组。</p>
+    <p>操作元素的 class 列表和内联样式是数据绑定的一个常见需求。因为它们都是属性，所以我们可以用 <code>v-bind</code> 处理它们：只需要通过表达式计算出字符串结果即可。不过，字符串拼接麻烦且易错。因此，在将 <code>v-bind</code> 用于 <code>class</code> 和 <code>style</code> 时，Vue.js 做了专门的增强。表达式结果的类型除了字符串之外，还可以是对象或数组。</p>
 <h2 id="绑定-HTML-Class"><a href="#绑定-HTML-Class" class="headerlink" title="绑定 HTML Class"></a>绑定 HTML Class</h2><h3 id="对象语法"><a href="#对象语法" class="headerlink" title="对象语法"></a>对象语法</h3><p>我们可以传给 <code>v-bind:class</code> 一个对象，以动态地切换 class：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:class</span>=<span class="string">"&#123; active: isActive &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>上面的语法表示 <code>active</code> 这个 class 存在与否将取决于数据属性 <code>isActive</code> 的 <a href="https://developer.mozilla.org/zh-CN/docs/Glossary/Truthy" target="_blank" rel="noopener">truthiness</a>。</p>
@@ -919,6 +917,7 @@
 <p><small><br><strong>译者注</strong><br><a id="footnote-1"></a>[1] truthy 不是 <code>true</code>，详见 <a href="https://developer.mozilla.org/zh-CN/docs/Glossary/Truthy" target="_blank" rel="noopener">MDN</a> 的解释。<br></small></p>
 
   
+  
     <div class="guide-links">
       
         <span>← <a href="/v2/guide/computed.html">计算属性和观察者</a></span>
@@ -929,7 +928,7 @@
     </div>
   
   <div class="footer">
-    <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
 <div class="bsa-cpc"></div>
 <script>
   (function(){

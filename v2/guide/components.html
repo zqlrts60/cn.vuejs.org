@@ -144,10 +144,9 @@
   <a class="nav-link">支持 Vue</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><ul>
-      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">商店</a></li>
-      <li><a href="https://stickeroverflow.org/blog/vue-donation/" target="_blank" class="nav-link">贴纸</a></li>
-      <li><a href="https://opencollective.com/vuejs" target="_blank" class="nav-link">在 OpenCollective 支持我们</a></li>
-      <li><a href="https://www.patreon.com/evanyou" target="_blank" class="nav-link">在 Patreon 支持 Evan</a></li>
+      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">一次性赞助</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" target="_blank" class="nav-link">周期性赞助</a></li>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">T 恤商店</a></li>
     </ul></li>
   </ul>
 </li>
@@ -239,10 +238,9 @@
   <a class="nav-link">支持 Vue</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><ul>
-      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">商店</a></li>
-      <li><a href="https://stickeroverflow.org/blog/vue-donation/" target="_blank" class="nav-link">贴纸</a></li>
-      <li><a href="https://opencollective.com/vuejs" target="_blank" class="nav-link">在 OpenCollective 支持我们</a></li>
-      <li><a href="https://www.patreon.com/evanyou" target="_blank" class="nav-link">在 Patreon 支持 Evan</a></li>
+      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">一次性赞助</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" target="_blank" class="nav-link">周期性赞助</a></li>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">T 恤商店</a></li>
     </ul></li>
   </ul>
 </li>
@@ -859,7 +857,7 @@
     <h1>组件</h1>
   
   
-  <h2 id="什么是组件？"><a href="#什么是组件？" class="headerlink" title="什么是组件？"></a>什么是组件？</h2><p>组件 (Component) 是 Vue.js 最强大的功能之一。组件可以扩展 HTML 元素，封装可重用的代码。在较高层面上，组件是自定义元素，Vue.js 的编译器为它添加特殊功能。在有些情况下，组件也可以表现为用 <code>is</code> 特性进行了扩展的原生 HTML 元素。</p>
+    <h2 id="什么是组件？"><a href="#什么是组件？" class="headerlink" title="什么是组件？"></a>什么是组件？</h2><p>组件 (Component) 是 Vue.js 最强大的功能之一。组件可以扩展 HTML 元素，封装可重用的代码。在较高层面上，组件是自定义元素，Vue.js 的编译器为它添加特殊功能。在有些情况下，组件也可以表现为用 <code>is</code> 特性进行了扩展的原生 HTML 元素。</p>
 <p>所有的 Vue 组件同时也都是 Vue 的实例，所以可接受相同的选项对象 (除了一些根级特有的选项) 并提供相同的生命周期钩子。</p>
 <h2 id="使用组件"><a href="#使用组件" class="headerlink" title="使用组件"></a>使用组件</h2><h3 id="全局注册"><a href="#全局注册" class="headerlink" title="全局注册"></a>全局注册</h3><p>我们已经知道，可以通过以下方式创建一个 Vue 实例：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#some-element'</span>,</span><br><span class="line">  <span class="comment">// 选项</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
@@ -1254,7 +1252,7 @@ new Vue({
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"item"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">v-for</span>=<span class="string">"item in items"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:text</span>=<span class="string">"item.text"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 这里写入备用内容 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h4 id="解构"><a href="#解构" class="headerlink" title="解构"></a>解构</h4><p><code>slot-scope</code> 的值实际上是一个可以出现在函数签名参数位置的合法的 JavaScript 表达式。这意味着在受支持的环境 (单文件组件或现代浏览器) 中，您还可以在表达式中使用 ES2015 解构：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">child</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">slot-scope</span>=<span class="string">"&#123; text &#125;"</span>&gt;</span>&#123;&#123; text &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="动态组件"><a href="#动态组件" class="headerlink" title="动态组件"></a>动态组件</h2><p>通过使用保留的 <code>&lt;component&gt;</code> 元素，动态地绑定到它的 <code>is</code> 特性，我们让多个组件可以使用同一个挂载点，并动态切换：</p>
+<h2 id="动态组件"><a href="#动态组件" class="headerlink" title="动态组件"></a>动态组件</h2><p>通过使用保留的 <code>&lt;component&gt;</code> 元素，并对其 <code>is</code> 特性进行动态绑定，你可以在同一个挂载点动态切换多个组件：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#example'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    currentView: <span class="string">'home'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    home: &#123; <span class="comment">/* ... */</span> &#125;,</span><br><span class="line">    posts: &#123; <span class="comment">/* ... */</span> &#125;,</span><br><span class="line">    archive: &#123; <span class="comment">/* ... */</span> &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">component</span> <span class="attr">v-bind:is</span>=<span class="string">"currentView"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 组件在 vm.currentview 变化时改变！ --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>也可以直接绑定到组件对象上：</p>
@@ -1341,6 +1339,7 @@ new Vue({
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Vue.component(<span class="string">'terms-of-service'</span>, &#123;</span><br><span class="line">  template: <span class="string">'\</span></span><br><span class="line"><span class="string">    &lt;div v-once&gt;\</span></span><br><span class="line"><span class="string">      &lt;h1&gt;Terms of Service&lt;/h1&gt;\</span></span><br><span class="line"><span class="string">      ...很多静态内容...\</span></span><br><span class="line"><span class="string">    &lt;/div&gt;\</span></span><br><span class="line"><span class="string">  '</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
   
+  
     <div class="guide-links">
       
         <span>← <a href="/v2/guide/forms.html">表单输入绑定</a></span>
@@ -1349,7 +1348,7 @@ new Vue({
     </div>
   
   <div class="footer">
-    <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
 <div class="bsa-cpc"></div>
 <script>
   (function(){

@@ -1,9 +1,10 @@
 (function () {
   initMobileMenu()
+  initVideoModal()
   if (PAGE_TYPE) {
     initVersionSelect()
-    initSubHeaders()
     initApiSpecLinks()
+    initSubHeaders()
     initLocationHashFuzzyMatching()
   }
 
@@ -12,9 +13,17 @@
     if (apiContent) {
       var apiTitles = [].slice.call(apiContent.querySelectorAll('h3'))
       apiTitles.forEach(function (titleNode) {
+        var methodMatch = titleNode.textContent.match(/^([^(]+)\(/)
+        if (methodMatch) {
+          var idWithoutArguments = slugize(methodMatch[1])
+          titleNode.setAttribute('id', idWithoutArguments)
+          titleNode.querySelector('a').setAttribute('href', '#' + idWithoutArguments)
+        }
+
         var ulNode = titleNode.parentNode.nextSibling
         if (ulNode.tagName !== 'UL') {
           ulNode = ulNode.nextSibling
+          if (!ulNode) return
         }
         if (ulNode.tagName === 'UL') {
           var specNode = document.createElement('li')
@@ -40,7 +49,7 @@
       hash = hash.substr(1)
     }
 
-    // Escape characthers
+    // Escape characters
     try {
       hash = decodeURIComponent(hash)
     } catch (e) {}
@@ -127,6 +136,40 @@
       if (Math.abs(xDiff) > Math.abs(yDiff)) {
         if (xDiff > 0 && start.x <= 80) sidebar.classList.add('open')
         else sidebar.classList.remove('open')
+      }
+    })
+  }
+
+  /**
+  * Modal Video Player
+  */
+  function initVideoModal () {
+    var modalButton = document.getElementById('modal-player')
+    var videoModal = document.getElementById('video-modal')
+
+    if (!modalButton || !videoModal) {
+      return
+    }
+
+    var videoWrapper = videoModal.querySelector('.video-space')
+    var overlay = document.createElement('div')
+        overlay.className = 'overlay'
+
+
+    modalButton.addEventListener('click', function(event) {
+      event.stopPropagation()
+      videoModal.classList.toggle('open')
+      document.body.classList.toggle('stop-scroll')
+      document.body.appendChild(overlay)
+      videoWrapper.innerHTML = '<iframe style="height: 100%; left: 0; position: absolute; top: 0; width: 100%;" src="//player.youku.com/embed/XMzMwMTYyODMyNA==" frameborder="0" allowfullscreen></iframe>'
+    })
+
+    document.body.addEventListener('click', function(e) {
+      if (e.target !== modalButton && !videoModal.contains(e.target)) {
+        videoModal.classList.remove('open')
+        document.body.classList.remove('stop-scroll')
+        document.body.removeChild(overlay)
+        videoWrapper.innerHTML = ''
       }
     })
   }
@@ -333,20 +376,61 @@
       }
     }
 
-    function makeHeaderClickable (link) {
-      var wrapper = link.querySelector('a')
-      wrapper.setAttribute('data-scroll', '')
+    function makeHeaderClickable (header) {
+      var link = header.querySelector('a')
+      if (!link) {
+        return
+      }
+      link.setAttribute('data-scroll', '')
 
       // transform DOM structure from
       // `<h2><a></a>Header</a>` to <h2><a>Header</a></h2>`
-      // to make the link clickable
-      var nodes = Array.prototype.slice.call(link.childNodes)
+      // to make the header clickable
+      var nodes = Array.prototype.slice.call(header.childNodes)
       for (var i = 0; i < nodes.length; i++) {
         var node = nodes[i]
-        if (node !== wrapper) {
-          wrapper.appendChild(node)
+        if (node !== link) {
+          link.appendChild(node)
         }
       }
+    }
+  }
+
+  // Stolen from: https://github.com/hexojs/hexo-util/blob/master/lib/escape_regexp.js
+  function escapeRegExp(str) {
+    if (typeof str !== 'string') throw new TypeError('str must be a string!');
+
+    // http://stackoverflow.com/a/6969486
+    return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&');
+  }
+
+  // Stolen from: https://github.com/hexojs/hexo-util/blob/master/lib/slugize.js
+  function slugize(str, options) {
+    if (typeof str !== 'string') throw new TypeError('str must be a string!')
+    options = options || {}
+
+    var rControl = /[\u0000-\u001f]/g
+    var rSpecial = /[\s~`!@#\$%\^&\*\(\)\-_\+=\[\]\{\}\|\\;:"'<>,\.\?\/]+/g
+    var separator = options.separator || '-'
+    var escapedSep = escapeRegExp(separator)
+
+    var result = str
+      // Remove control characters
+      .replace(rControl, '')
+      // Replace special characters
+      .replace(rSpecial, separator)
+      // Remove continous separators
+      .replace(new RegExp(escapedSep + '{2,}', 'g'), separator)
+      // Remove prefixing and trailing separtors
+      .replace(new RegExp('^' + escapedSep + '+|' + escapedSep + '+$', 'g'), '')
+
+    switch (options.transform) {
+      case 1:
+        return result.toLowerCase()
+      case 2:
+        return result.toUpperCase()
+      default:
+        return result
     }
   }
 })()

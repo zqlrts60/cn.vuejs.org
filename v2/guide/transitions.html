@@ -144,10 +144,9 @@
   <a class="nav-link">支持 Vue</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><ul>
-      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">商店</a></li>
-      <li><a href="https://stickeroverflow.org/blog/vue-donation/" target="_blank" class="nav-link">贴纸</a></li>
-      <li><a href="https://opencollective.com/vuejs" target="_blank" class="nav-link">在 OpenCollective 支持我们</a></li>
-      <li><a href="https://www.patreon.com/evanyou" target="_blank" class="nav-link">在 Patreon 支持 Evan</a></li>
+      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">一次性赞助</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" target="_blank" class="nav-link">周期性赞助</a></li>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">T 恤商店</a></li>
     </ul></li>
   </ul>
 </li>
@@ -239,10 +238,9 @@
   <a class="nav-link">支持 Vue</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><ul>
-      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">商店</a></li>
-      <li><a href="https://stickeroverflow.org/blog/vue-donation/" target="_blank" class="nav-link">贴纸</a></li>
-      <li><a href="https://opencollective.com/vuejs" target="_blank" class="nav-link">在 OpenCollective 支持我们</a></li>
-      <li><a href="https://www.patreon.com/evanyou" target="_blank" class="nav-link">在 Patreon 支持 Evan</a></li>
+      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">一次性赞助</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" target="_blank" class="nav-link">周期性赞助</a></li>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">T 恤商店</a></li>
     </ul></li>
   </ul>
 </li>
@@ -859,7 +857,7 @@
     <h1>进入/离开 & 列表过渡</h1>
   
   
-  <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Vue 在插入、更新或者移除 DOM 时，提供多种不同方式的应用过渡效果。<br>包括以下工具：</p>
+    <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Vue 在插入、更新或者移除 DOM 时，提供多种不同方式的应用过渡效果。<br>包括以下工具：</p>
 <ul>
 <li>在 CSS 过渡和动画中自动应用 class</li>
 <li>可以配合使用第三方 CSS 动画库，如 Animate.css</li>
@@ -877,7 +875,7 @@
 <p>这里是一个典型的例子：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"show = !show"</span>&gt;</span></span><br><span class="line">    Toggle</span><br><span class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">transition</span> <span class="attr">name</span>=<span class="string">"fade"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">"show"</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#demo'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    show: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.fade-enter-active</span>, <span class="selector-class">.fade-leave-active</span> &#123;</span><br><span class="line">  <span class="attribute">transition</span>: opacity .<span class="number">5s</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.fade-enter</span>, <span class="selector-class">.fade-leave-to</span> <span class="comment">/* .fade-leave-active in below version 2.1.8 */</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.fade-enter-active</span>, <span class="selector-class">.fade-leave-active</span> &#123;</span><br><span class="line">  <span class="attribute">transition</span>: opacity .<span class="number">5s</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.fade-enter</span>, <span class="selector-class">.fade-leave-to</span> <span class="comment">/* .fade-leave-active below version 2.1.8 */</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <div id="demo">
   <button v-on:click="show = !show">
@@ -919,13 +917,13 @@ new Vue({
 </li>
 <li><p><code>v-enter-active</code>：定义过渡的状态。在元素整个过渡过程中作用，在元素被插入时生效，在 <code>transition/animation</code> 完成之后移除。这个类可以被用来定义过渡的过程时间，延迟和曲线函数。</p>
 </li>
-<li><p><code>v-enter-to</code>: <strong>2.1.8版及以上</strong> 定义进入过渡的结束状态。在元素被插入一帧后生效 (于此同时 <code>v-enter</code> 被删除)，在 <code>transition/animation</code> 完成之后移除。</p>
+<li><p><code>v-enter-to</code>: <strong>2.1.8版及以上</strong> 定义进入过渡的结束状态。在元素被插入一帧后生效 (与此同时 <code>v-enter</code> 被删除)，在 <code>transition/animation</code> 完成之后移除。</p>
 </li>
 <li><p><code>v-leave</code>:  定义离开过渡的开始状态。在离开过渡被触发时生效，在下一个帧移除。</p>
 </li>
 <li><p><code>v-leave-active</code>：定义过渡的状态。在元素整个过渡过程中作用，在离开过渡被触发后立即生效，在 <code>transition/animation</code> 完成之后移除。这个类可以被用来定义过渡的过程时间，延迟和曲线函数。</p>
 </li>
-<li><p><code>v-leave-to</code>: <strong>2.1.8版及以上</strong> 定义离开过渡的结束状态。在离开过渡被触发一帧后生效 (于此同时 <code>v-leave</code> 被删除)，在 <code>transition/animation</code> 完成之后移除。</p>
+<li><p><code>v-leave-to</code>: <strong>2.1.8版及以上</strong> 定义离开过渡的结束状态。在离开过渡被触发一帧后生效 (与此同时 <code>v-leave</code> 被删除)，在 <code>transition/animation</code> 完成之后移除。</p>
 </li>
 </ol>
 <p><img src="/images/transition.png" alt="Transition Diagram"></p>
@@ -1120,9 +1118,9 @@ new Vue({
 })
 </script>
 
-<h2 id="初始渲染的过渡"><a href="#初始渲染的过渡" class="headerlink" title="初始渲染的过渡"></a>初始渲染的过渡</h2><p>可以通过 <code>appear</code> 特性设置节点的在初始渲染的过渡</p>
+<h2 id="初始渲染的过渡"><a href="#初始渲染的过渡" class="headerlink" title="初始渲染的过渡"></a>初始渲染的过渡</h2><p>可以通过 <code>appear</code> 特性设置节点在初始渲染的过渡</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">transition</span> <span class="attr">appear</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>这里默认和进入和离开过渡一样，同样也可以自定义 CSS 类名。</p>
+<p>这里默认和进入/离开过渡一样，同样也可以自定义 CSS 类名。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">transition</span></span></span><br><span class="line"><span class="tag">  <span class="attr">appear</span></span></span><br><span class="line"><span class="tag">  <span class="attr">appear-class</span>=<span class="string">"custom-appear-class"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">appear-to-class</span>=<span class="string">"custom-appear-to-class"</span> (<span class="attr">2.1.8</span>+)</span></span><br><span class="line"><span class="tag">  <span class="attr">appear-active-class</span>=<span class="string">"custom-appear-active-class"</span></span></span><br><span class="line"><span class="tag">&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>自定义 JavaScript 钩子：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">transition</span></span></span><br><span class="line"><span class="tag">  <span class="attr">appear</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-on:before-appear</span>=<span class="string">"customBeforeAppearHook"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-on:appear</span>=<span class="string">"customAppearHook"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-on:after-appear</span>=<span class="string">"customAfterAppearHook"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-on:appear-cancelled</span>=<span class="string">"customAppearCancelledHook"</span></span></span><br><span class="line"><span class="tag">&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -1133,7 +1131,7 @@ new Vue({
 
 <p>示例：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">transition</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-if</span>=<span class="string">"isEditing"</span> <span class="attr">key</span>=<span class="string">"save"</span>&gt;</span></span><br><span class="line">    Save</span><br><span class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-else</span> <span class="attr">key</span>=<span class="string">"edit"</span>&gt;</span></span><br><span class="line">    Edit</span><br><span class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>在一些场景中，也可以给通过给同一个元素的 <code>key</code> 特性设置不同的状态来代替 <code>v-if</code> 和 <code>v-else</code>，上面的例子可以重写为：</p>
+<p>在一些场景中，也可以通过给同一个元素的 <code>key</code> 特性设置不同的状态来代替 <code>v-if</code> 和 <code>v-else</code>，上面的例子可以重写为：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">transition</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-bind:key</span>=<span class="string">"isEditing"</span>&gt;</span></span><br><span class="line">    &#123;&#123; isEditing ? 'Save' : 'Edit' &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>使用多个 <code>v-if</code> 的多个元素的过渡可以重写为绑定了动态属性的单个元素过渡。例如：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">transition</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-if</span>=<span class="string">"docState === 'saved'"</span> <span class="attr">key</span>=<span class="string">"saved"</span>&gt;</span></span><br><span class="line">    Edit</span><br><span class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-if</span>=<span class="string">"docState === 'edited'"</span> <span class="attr">key</span>=<span class="string">"edited"</span>&gt;</span></span><br><span class="line">    Save</span><br><span class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-if</span>=<span class="string">"docState === 'editing'"</span> <span class="attr">key</span>=<span class="string">"editing"</span>&gt;</span></span><br><span class="line">    Cancel</span><br><span class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -1715,6 +1713,7 @@ new Vue({
 <p>最后，创建动态过渡的最终方案是组件通过接受 props 来动态修改之前的过渡。一句老话，唯一的限制是你的想象力。</p>
 
   
+  
     <div class="guide-links">
       
       
@@ -1723,7 +1722,7 @@ new Vue({
     </div>
   
   <div class="footer">
-    <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
 <div class="bsa-cpc"></div>
 <script>
   (function(){

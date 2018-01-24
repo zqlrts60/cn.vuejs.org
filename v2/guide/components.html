@@ -141,11 +141,11 @@
   <a href="/v2/guide/team.html" class="nav-link team">团队</a>
 </li>
 <li class="nav-dropdown-container support-vue">
-  <a class="nav-link">支持 Vue</a><span class="arrow"></span>
+  <a href="/support-vuejs/" class="nav-link">支持 Vue</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><ul>
       <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">一次性赞助</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" target="_blank" class="nav-link">周期性赞助</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">周期性赞助</a></li>
       <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">T 恤商店</a></li>
     </ul></li>
   </ul>
@@ -235,11 +235,11 @@
   <a href="/v2/guide/team.html" class="nav-link team">团队</a>
 </li>
 <li class="nav-dropdown-container support-vue">
-  <a class="nav-link">支持 Vue</a><span class="arrow"></span>
+  <a href="/support-vuejs/" class="nav-link">支持 Vue</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><ul>
       <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">一次性赞助</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" target="_blank" class="nav-link">周期性赞助</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">周期性赞助</a></li>
       <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">T 恤商店</a></li>
     </ul></li>
   </ul>
@@ -1068,7 +1068,7 @@ new Vue({
 <p class="tip">Vue 的事件系统与浏览器的 <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget" target="_blank" rel="noopener">EventTarget API</a> 有所不同。尽管它们的运行起来类似，但是 <code>$on</code> 和 <code>$emit</code> <strong>并不是</strong><code>addEventListener</code> 和 <code>dispatchEvent</code> 的别名。</p>
 
 <p>另外，父组件可以在使用子组件的地方直接用 <code>v-on</code> 来监听子组件触发的事件。</p>
-<p class="tip">不能用 <code>$on</code> 侦听子组件释放的事件，而必须在模板里直接用 <code>v-on</code> 绑定，参见下面的例子。</p>
+<p class="tip">不能用 <code>$on</code> 监听子组件释放的事件，而必须在模板里直接用 <code>v-on</code> 绑定，参见下面的例子。</p>
 
 <p>下面是一个例子：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"counter-event-example"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; total &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button-counter</span> <span class="attr">v-on:increment</span>=<span class="string">"incrementTotal"</span>&gt;</span><span class="tag">&lt;/<span class="name">button-counter</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button-counter</span> <span class="attr">v-on:increment</span>=<span class="string">"incrementTotal"</span>&gt;</span><span class="tag">&lt;/<span class="name">button-counter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>

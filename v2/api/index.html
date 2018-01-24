@@ -141,11 +141,11 @@
   <a href="/v2/guide/team.html" class="nav-link team">团队</a>
 </li>
 <li class="nav-dropdown-container support-vue">
-  <a class="nav-link">支持 Vue</a><span class="arrow"></span>
+  <a href="/support-vuejs/" class="nav-link">支持 Vue</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><ul>
       <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">一次性赞助</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" target="_blank" class="nav-link">周期性赞助</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">周期性赞助</a></li>
       <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">T 恤商店</a></li>
     </ul></li>
   </ul>
@@ -235,11 +235,11 @@
   <a href="/v2/guide/team.html" class="nav-link team">团队</a>
 </li>
 <li class="nav-dropdown-container support-vue">
-  <a class="nav-link">支持 Vue</a><span class="arrow"></span>
+  <a href="/support-vuejs/" class="nav-link">支持 Vue</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><ul>
       <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">一次性赞助</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" target="_blank" class="nav-link">周期性赞助</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">周期性赞助</a></li>
       <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">T 恤商店</a></li>
     </ul></li>
   </ul>
@@ -638,7 +638,7 @@
 <p>计算属性将被混入到 Vue 实例中。所有 getter 和 setter 的 this 上下文自动地绑定为 Vue 实例。</p>
 <p class="tip">注意，<strong>不应该使用箭头函数来定义计算属性函数</strong> (例如 <code>aDouble: () =&gt; this.a * 2</code>)。理由是箭头函数绑定了父级作用域的上下文，所以 <code>this</code> 将不会按照期望指向 Vue 实例，<code>this.a</code> 将是 undefined。</p>
 
-<p>计算属性的结果会被缓存，除非依赖的响应式属性变化才会重新计算。注意，如果实例范畴之外的依赖 (比如非响应式的 not reactive) 是<strong>不会</strong>触发计算属性更新的。</p>
+<p>计算属性的结果会被缓存，除非依赖的响应式属性变化才会重新计算。注意，如果某个依赖 (比如非响应式属性) 在该实例范畴之外，则计算属性是<strong>不会</strong>被更新的。</p>
 </li>
 <li><p><strong>示例</strong>：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  data: &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    <span class="comment">// 仅读取</span></span><br><span class="line">    aDouble: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.a * <span class="number">2</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 读取和设置</span></span><br><span class="line">    aPlus: &#123;</span><br><span class="line">      get: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.a + <span class="number">1</span></span><br><span class="line">      &#125;,</span><br><span class="line">      set: <span class="function"><span class="keyword">function</span> (<span class="params">v</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.a = v - <span class="number">1</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">vm.aPlus   <span class="comment">// =&gt; 2</span></span><br><span class="line">vm.aPlus = <span class="number">3</span></span><br><span class="line">vm.a       <span class="comment">// =&gt; 2</span></span><br><span class="line">vm.aDouble <span class="comment">// =&gt; 4</span></span><br></pre></td></tr></table></figure>
@@ -1016,7 +1016,7 @@
 <li><p><strong>类型</strong>：<code>{ prop?: string, event?: string }</code></p>
 </li>
 <li><p><strong>详细</strong>：</p>
-<p>允许一个自定义组件在使用 <code>v-model</code> 时定制 prop 和 event。默认情况下，一个组件上的 <code>v-model</code> 会把 <code>value</code> 用作 prop 且把 <code>input</code> 用作 event，但是一些输入类型比如单选框和复选框按钮可能像使用 <code>value</code> prop 来达到不同的目的。使用 <code>model</code> 选项可以回避这些情况产生的冲突。</p>
+<p>允许一个自定义组件在使用 <code>v-model</code> 时定制 prop 和 event。默认情况下，一个组件上的 <code>v-model</code> 会把 <code>value</code> 用作 prop 且把 <code>input</code> 用作 event，但是一些输入类型比如单选框和复选框按钮可能想使用 <code>value</code> prop 来达到不同的目的。使用 <code>model</code> 选项可以回避这些情况产生的冲突。</p>
 </li>
 <li><p><strong>Example</strong>：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Vue.component(<span class="string">'my-checkbox'</span>, &#123;</span><br><span class="line">  model: &#123;</span><br><span class="line">    prop: <span class="string">'checked'</span>,</span><br><span class="line">    event: <span class="string">'change'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    <span class="comment">// this allows using the `value` prop for a different purpose</span></span><br><span class="line">    value: <span class="built_in">String</span>,</span><br><span class="line">    <span class="comment">// use `checked` as the prop which take the place of `value`</span></span><br><span class="line">    checked: &#123;</span><br><span class="line">      type: <span class="built_in">Number</span>,</span><br><span class="line">      <span class="keyword">default</span>: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>

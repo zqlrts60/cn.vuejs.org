@@ -141,11 +141,11 @@
   <a href="/v2/guide/team.html" class="nav-link team">团队</a>
 </li>
 <li class="nav-dropdown-container support-vue">
-  <a class="nav-link">支持 Vue</a><span class="arrow"></span>
+  <a href="/support-vuejs/" class="nav-link">支持 Vue</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><ul>
       <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">一次性赞助</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" target="_blank" class="nav-link">周期性赞助</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">周期性赞助</a></li>
       <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">T 恤商店</a></li>
     </ul></li>
   </ul>
@@ -235,11 +235,11 @@
   <a href="/v2/guide/team.html" class="nav-link team">团队</a>
 </li>
 <li class="nav-dropdown-container support-vue">
-  <a class="nav-link">支持 Vue</a><span class="arrow"></span>
+  <a href="/support-vuejs/" class="nav-link">支持 Vue</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><ul>
       <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">一次性赞助</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" target="_blank" class="nav-link">周期性赞助</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">周期性赞助</a></li>
       <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">T 恤商店</a></li>
     </ul></li>
   </ul>
@@ -945,9 +945,10 @@ new Vue({
 <blockquote>
 <p>2.3.0 新增</p>
 </blockquote>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- the scroll event will not cancel the default scroll behavior --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-on:scroll.passive</span>=<span class="string">"onScroll"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>Vue 为这些修饰符额外提供了 <code>.passive</code> 修饰符来提升移动端的性能。举个例子，在滚动的时候，浏览器会在整个事件处理完毕之后再触发滚动，因为浏览器并不知道这个事件是否在其处理函数中被调用了 <code>event.preventDefault()</code>。<code>.passive</code> 修饰符用来进一步告诉浏览器这个事件的默认行为不会被取消。</p>
-<p class="tip">不要把 <code>.passive</code> 和 <code>.prevent</code> 一起使用。被动处理函数无法阻止默认的事件行为。</p>
+<p>Vue 还对应 <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Parameters" target="_blank" rel="noopener"><code>addEventListener</code> 中的 <code>passive</code> 选项</a>提供了 <code>.passive</code> 修饰符。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 滚动事件的默认行为 (即滚动行为) 将会立即触发 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 而不会等待 `onScroll` 完成  --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 这其中包含 `event.preventDefault()` 的情况 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-on:scroll.passive</span>=<span class="string">"onScroll"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这个 <code>.passive</code> 修饰符尤其能够提升移动端的性能。</p>
+<p class="tip">不要把 <code>.passive</code> 和 <code>.prevent</code> 一起使用，因为 <code>.prevent</code> 将会被忽略，同时浏览器可能会向你展示一个警告。请记住，<code>.passive</code> 会告诉浏览器你<em>不</em>想阻止事件的默认行为。</p>
 
 <h2 id="按键修饰符"><a href="#按键修饰符" class="headerlink" title="按键修饰符"></a>按键修饰符</h2><p>在监听键盘事件时，我们经常需要检查常见的键值。Vue 允许为 <code>v-on</code> 在监听键盘事件时添加按键修饰符：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 只有在 `keyCode` 是 13 时调用 `vm.submit()` --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-on:keyup.13</span>=<span class="string">"submit"</span>&gt;</span></span><br></pre></td></tr></table></figure>

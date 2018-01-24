@@ -141,11 +141,11 @@
   <a href="/v2/guide/team.html" class="nav-link team">团队</a>
 </li>
 <li class="nav-dropdown-container support-vue">
-  <a class="nav-link">支持 Vue</a><span class="arrow"></span>
+  <a href="/support-vuejs/" class="nav-link">支持 Vue</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><ul>
       <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">一次性赞助</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" target="_blank" class="nav-link">周期性赞助</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">周期性赞助</a></li>
       <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">T 恤商店</a></li>
     </ul></li>
   </ul>
@@ -235,11 +235,11 @@
   <a href="/v2/guide/team.html" class="nav-link team">团队</a>
 </li>
 <li class="nav-dropdown-container support-vue">
-  <a class="nav-link">支持 Vue</a><span class="arrow"></span>
+  <a href="/support-vuejs/" class="nav-link">支持 Vue</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><ul>
       <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">一次性赞助</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" target="_blank" class="nav-link">周期性赞助</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">周期性赞助</a></li>
       <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">T 恤商店</a></li>
     </ul></li>
   </ul>
@@ -869,7 +869,10 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">NODE_ENV=production browserify -g envify -e main.js | uglifyjs -c -m &gt; build.js</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>或者在 Gulp 中使用 <a href="https://github.com/hughsk/envify" target="_blank" rel="noopener">envify</a>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 使用 envify 的自定义模块来定制环境变量</span></span><br><span class="line"><span class="keyword">var</span> envify = <span class="built_in">require</span>(<span class="string">'envify/custom'</span>)</span><br><span class="line"></span><br><span class="line">browserify(browserifyOptions)</span><br><span class="line">  .transform(vueify),</span><br><span class="line">  .transform(</span><br><span class="line">    <span class="comment">// 必填项，以处理 node_modules 里的文件</span></span><br><span class="line">    &#123; <span class="attr">global</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">    envify(&#123; <span class="attr">NODE_ENV</span>: <span class="string">'production'</span> &#125;)</span><br><span class="line">  )</span><br><span class="line">  .bundle()</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 使用 envify 的自定义模块来定制环境变量</span></span><br><span class="line"><span class="keyword">var</span> envify = <span class="built_in">require</span>(<span class="string">'envify/custom'</span>)</span><br><span class="line"></span><br><span class="line">browserify(browserifyOptions)</span><br><span class="line">  .transform(vueify)</span><br><span class="line">  .transform(</span><br><span class="line">    <span class="comment">// 必填项，以处理 node_modules 里的文件</span></span><br><span class="line">    &#123; <span class="attr">global</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">    envify(&#123; <span class="attr">NODE_ENV</span>: <span class="string">'production'</span> &#125;)</span><br><span class="line">  )</span><br><span class="line">  .bundle()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>或者配合 Grunt 和 <a href="https://github.com/jmreidy/grunt-browserify" target="_blank" rel="noopener">grunt-browserify</a> 使用 <a href="https://github.com/hughsk/envify" target="_blank" rel="noopener">envify</a>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 使用 envify 自定义模块指定环境变量</span></span><br><span class="line"><span class="keyword">var</span> envify = <span class="built_in">require</span>(<span class="string">'envify/custom'</span>)</span><br><span class="line"></span><br><span class="line">browserify: &#123;</span><br><span class="line">  dist: &#123;</span><br><span class="line">    options: &#123;</span><br><span class="line">        <span class="comment">// 该函数用来调整 grunt-browserify 的默认指令</span></span><br><span class="line">        configure: <span class="function"><span class="params">b</span> =&gt;</span> b</span><br><span class="line">        .transform(<span class="string">'vueify'</span>)</span><br><span class="line">        .transform(</span><br><span class="line">            <span class="comment">// 用来处理 `node_modules` 文件</span></span><br><span class="line">          &#123; <span class="attr">global</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">          envify(&#123; <span class="attr">NODE_ENV</span>: <span class="string">'production'</span> &#125;)</span><br><span class="line">        )</span><br><span class="line">        .bundle()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="Rollup"><a href="#Rollup" class="headerlink" title="Rollup"></a>Rollup</h4><p>使用 <a href="https://github.com/rollup/rollup-plugin-replace" target="_blank" rel="noopener">rollup-plugin-replace</a>：</p>

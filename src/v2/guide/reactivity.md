@@ -108,7 +108,7 @@ Vue.component('example', {
   methods: {
     updateMessage: function () {
       this.message = '更新完成'
-      console.log(this.$el.textContent) // => '没有更新'
+      console.log(this.$el.textContent) // => '没有更新完成'
       this.$nextTick(function () {
         console.log(this.$el.textContent) // => '更新完成'
       })
